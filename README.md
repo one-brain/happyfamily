@@ -34,3 +34,10 @@ some features and functionalities that can be included in a website for a charit
 - Microsoft .NET API
 - ADO.NET / EF Core / Dapper
 - PostgreSQL
+
+# Contributors
+- **Join our Developers Channel :** [Happy Family Project Website Dev Team](https://t.me/+mpQZ_oFW3NljMzM1)
+
+# Contact
+- **Email :** santhoshakutumbam@gmail.com
+- **Telegram :** [Happy Family India](https://t.me/happy_family_india)
