@@ -31,6 +31,8 @@ some features and functionalities that can be included in a website for a charit
 
 # Technology
 - Angular
+  - Bootstrap
+  - Angular Material   
 - Microsoft .NET API
 - ADO.NET / EF Core / Dapper
 - PostgreSQL
