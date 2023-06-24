@@ -1,3 +1,8 @@
+:root {
+  --angular-primary-color: mat-color($mat-palette, primary);
+}
+
+
 .example-spacer {
     flex: 1 1 auto;
   }
@@ -24,4 +29,8 @@
   
   .example-sidenav {
     padding: 20px;
+  }
+
+  mat-action-list > button > mat-icon {
+    color: var(--angular-primary-color);
   }

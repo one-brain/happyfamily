@@ -6,28 +6,11 @@
     </div>
     <span class="example-spacer"></span>
 
-    
-    <button mat-icon-button class="ml-3 example-icon fingerprint-icon" aria-label="Example icon-button with fingerprint icon">
+    <button mat-icon-button class="ml-3 example-icon fingerprint-icon" aria-label="Example icon-button with fingerprint icon" matTooltip="login">
       <mat-icon>fingerprint</mat-icon>
-      <div class="mat-caption text-center">Login</div>
     </button>
 
-    <button mat-icon-button class="ml-3 example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>event</mat-icon>
-      <div class="mat-caption text-center">Events</div>
-    </button>
-    
-    <button mat-icon-button class="ml-3 example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>sentiment_very_satisfied</mat-icon>
-      <div class="mat-caption text-center">Stories</div>
-    </button>
-
-    <button mat-icon-button class="ml-3 example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>how_to_vote</mat-icon>
-      <div class="mat-caption text-center">Donate</div>
-    </button>
-
-    <button mat-icon-button class="ml-3 example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+    <button mat-icon-button class="ml-3 example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()" matTooltip="menu">
       <mat-icon>menu</mat-icon>
     </button>
 
@@ -38,37 +21,44 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
     
-    <mat-list>
-      <mat-list-item>
+    <mat-action-list>
+      <button mat-list-item (click)="drawer.close()">
         <mat-icon matListItemIcon>event</mat-icon>
         <div matListItemTitle>Events Calendar</div>
-      </mat-list-item>
-      <mat-list-item >
+     </button>
+      <button mat-list-item (click)="drawer.close()">
         <mat-icon matListItemIcon>sentiment_very_satisfied</mat-icon>
         <div matListItemTitle>Success Stories</div>
-      </mat-list-item>
-      <mat-list-item >
+     </button>
+      <button mat-list-item (click)="drawer.close()">
         <mat-icon matListItemIcon>how_to_vote</mat-icon>
         <div matListItemTitle>Fund Us</div>
-      </mat-list-item>
+     </button>
 
-      <mat-list-item >
+      <button mat-list-item (click)="drawer.close()">
         <mat-icon matListItemIcon>contacts</mat-icon>
         <div matListItemTitle>Contact Information</div>
-      </mat-list-item>
+     </button>
 
-      <mat-list-item >
-        <mat-icon matListItemIcon>book</mat-icon>
+      <button mat-list-item (click)="drawer.close()">
+        <mat-icon matListItemIcon>local_library</mat-icon>
         <div matListItemTitle>Volunteer Resources</div>
-      </mat-list-item>
+     </button>
 
-      <mat-list-item >
-        <mat-icon matListItemIcon>group_add</mat-icon>
+      <button mat-list-item (click)="drawer.close()">
+        <mat-icon matListItemIcon>person_add</mat-icon>
         <div matListItemTitle>Partners and Sponsers</div>
-      </mat-list-item>
+     </button>
 
-    </mat-list>
+    </mat-action-list>
 
+    <!-- <mat-action-list>
+      <button mat-list-item>
+        <mat-icon matListItemIcon>person_add</mat-icon>
+        <div matListItemTitle>Partners and Sponsers</div>
+      </button>
+      <button mat-list-item >Undo</button>
+    </mat-action-list> -->
 
   </mat-drawer>
 
