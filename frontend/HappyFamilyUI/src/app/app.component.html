@@ -27,8 +27,53 @@
       <div class="mat-caption text-center">Donate</div>
     </button>
 
+    <button mat-icon-button class="ml-3 example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
   </mat-toolbar-row>
 
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+    
+    <mat-list>
+      <mat-list-item>
+        <mat-icon matListItemIcon>event</mat-icon>
+        <div matListItemTitle>Events Calendar</div>
+      </mat-list-item>
+      <mat-list-item >
+        <mat-icon matListItemIcon>sentiment_very_satisfied</mat-icon>
+        <div matListItemTitle>Success Stories</div>
+      </mat-list-item>
+      <mat-list-item >
+        <mat-icon matListItemIcon>how_to_vote</mat-icon>
+        <div matListItemTitle>Fund Us</div>
+      </mat-list-item>
+
+      <mat-list-item >
+        <mat-icon matListItemIcon>contacts</mat-icon>
+        <div matListItemTitle>Contact Information</div>
+      </mat-list-item>
+
+      <mat-list-item >
+        <mat-icon matListItemIcon>book</mat-icon>
+        <div matListItemTitle>Volunteer Resources</div>
+      </mat-list-item>
+
+      <mat-list-item >
+        <mat-icon matListItemIcon>group_add</mat-icon>
+        <div matListItemTitle>Partners and Sponsers</div>
+      </mat-list-item>
+
+    </mat-list>
+
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
+
