@@ -1,5 +1,5 @@
 # Events Calendar
-**Functional Description: Happy Family Events Calendar**
+**Happy Family Events Calendar**
 
 The Happy Family Events Calendar is a software component designed to facilitate the management and tracking of past and upcoming events within the Happy Family Community. This tool is integral to our mission of fostering love, unity, and support within families by keeping our community informed and engaged in various activities and initiatives.
 
