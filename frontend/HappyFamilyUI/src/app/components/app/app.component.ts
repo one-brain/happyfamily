@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   appTitle = 'Happy Family';
+  caption = 'for a happy nation';
   showFiller = false;
 }
