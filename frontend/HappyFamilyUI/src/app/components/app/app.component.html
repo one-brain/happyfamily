@@ -1,0 +1,72 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="p-1">
+      <app-logo url="assets/favicon.png" [title]="appTitle" [caption]="caption"></app-logo>
+    </div>
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button class="ml-3 example-icon fingerprint-icon" aria-label="Example icon-button with fingerprint icon" matTooltip="login">
+      <mat-icon>fingerprint</mat-icon>
+    </button>
+
+    <button mat-icon-button class="ml-3 example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()" matTooltip="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+    
+    <mat-action-list>
+      <button mat-list-item (click)="drawer.close()">
+        <mat-icon matListItemIcon>home</mat-icon>
+        <div matListItemTitle>Home</div>
+     </button>
+      <button mat-list-item (click)="drawer.close()">
+        <mat-icon matListItemIcon>event</mat-icon>
+        <div matListItemTitle>Events Calendar</div>
+     </button>
+      <button mat-list-item (click)="drawer.close()">
+        <mat-icon matListItemIcon>sentiment_very_satisfied</mat-icon>
+        <div matListItemTitle>Success Stories</div>
+     </button>
+      <button mat-list-item (click)="drawer.close()">
+        <mat-icon matListItemIcon>how_to_vote</mat-icon>
+        <div matListItemTitle>Support Us</div>
+     </button>
+
+      <button mat-list-item (click)="drawer.close()">
+        <mat-icon matListItemIcon>contacts</mat-icon>
+        <div matListItemTitle>Contact</div>
+     </button>
+
+      <button mat-list-item (click)="drawer.close()">
+        <mat-icon matListItemIcon>local_library</mat-icon>
+        <div matListItemTitle>Resources</div>
+     </button>
+
+      <button mat-list-item (click)="drawer.close()">
+        <mat-icon matListItemIcon>person_add</mat-icon>
+        <div matListItemTitle>Partners</div>
+     </button>
+
+    </mat-action-list>
+
+    <!-- <mat-action-list>
+      <button mat-list-item>
+        <mat-icon matListItemIcon>person_add</mat-icon>
+        <div matListItemTitle>Partners and Sponsers</div>
+      </button>
+      <button mat-list-item >Undo</button>
+    </mat-action-list> -->
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
+
