@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  scrollToElement($element:any): void {
-    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-  }
+  currentYear = (new Date()).getFullYear();
 }
