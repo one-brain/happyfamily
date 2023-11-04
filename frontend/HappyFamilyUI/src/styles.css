@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; scroll-behavior: smooth; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #f9f2ff; }
 
 .tool-bar-icon{
     width: 60px;
     height: 60px;
     border-radius: 6px;
+}
+
+.page-container{
+    min-height: 100vh;
+    padding: 5rem 2rem;
+    min-width: 100vh;
 }

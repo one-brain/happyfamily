@@ -1,0 +1,43 @@
+section{
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap:0;
+    background-size: cover;
+    position: relative;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+.home-section{
+    padding: 3rem 2rem;
+    background-image: url('../../../assets/home-section-background.jpg');
+}
+.events-section{
+    background-image: url('../../../assets/event-section-background.jpg');
+}
+.support-section{
+    background-color: var(--info);
+}
+.contact-section{
+    background-color: var(--success);
+}
+
+.partners-section{
+    background-color: var(--warning);
+}
+
+.stories-section{
+    background-color: var(--secondary);
+}
+
+.resources-section{
+    background-color: var(--danger);
+}
+
+.icon-display {
+    transform: scale(2);
+ }
+

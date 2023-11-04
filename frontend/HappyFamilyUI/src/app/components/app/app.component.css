@@ -1,36 +1,17 @@
-:root {
-  --angular-primary-color: mat-color($mat-palette, primary);
+.example-spacer {
+  flex: 1 1 auto;
 }
 
+.side-nav {
+  padding: 20px;
+}
 
-.example-spacer {
-    flex: 1 1 auto;
-  }
+.no-padding-margin {
+  margin: 1px;
+  padding: 1px;
+}
 
-
-  .toolbar {
-    max-height: 100px;
-    min-height: 100px;
-  }
-
-
-  .example-container {
-    width: 100%;
-    height: calc(100% - 64px);
-    border: 1px solid rgba(0, 0, 0, 0.5);
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .example-sidenav {
-    padding: 20px;
-  }
-
-  mat-action-list > button > mat-icon {
-    color: var(--angular-primary-color);
-  }
+.mat-toolbar-example{
+  position: fixed;
+  z-index:10;
+}

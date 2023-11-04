@@ -1,72 +1,115 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="mat-toolbar-example">
   <mat-toolbar-row>
     <div class="p-1">
       <app-logo url="assets/favicon.png" [title]="appTitle" [caption]="caption"></app-logo>
     </div>
     <span class="example-spacer"></span>
+    <div id="navigation-links" class="d-flex">
 
-    <button mat-icon-button class="ml-3 example-icon fingerprint-icon" aria-label="Example icon-button with fingerprint icon" matTooltip="login">
+      <div class="col no-padding-margin">
+        <button mat-button matTooltip="Home" routerLink="">
+          <mat-icon>home</mat-icon>
+          <span class="d-block mat-caption">Home</span>
+        </button>
+      </div>
+
+      <div class="col no-padding-margin">
+        <button mat-button matTooltip="Events" [routerLink]="['']" fragment="events">
+          <mat-icon>event</mat-icon>
+          <span class="d-block mat-caption">Events</span>
+        </button>
+      </div>
+      <div class="col no-padding-margin">
+        <button mat-button matTooltip="Stories" [routerLink]="['']" fragment="stories">
+          <mat-icon>sentiment_very_satisfied</mat-icon>
+          <span class="d-block mat-caption">Stories</span>
+        </button>
+      </div>
+      <div class="col no-padding-margin">
+        <button mat-button matTooltip="Support" [routerLink]="['']" fragment="support">
+          <mat-icon>how_to_vote</mat-icon>
+          <span class="d-block mat-caption">Support</span>
+        </button>
+      </div>
+      <div class="col no-padding-margin">
+        <button mat-button matTooltip="Contact" [routerLink]="['']" fragment="contact">
+          <mat-icon>location_pin</mat-icon>
+          <span class="d-block mat-caption">Contact</span>
+        </button>
+      </div>
+      <div class="col no-padding-margin">
+        <button mat-button matTooltip="Resources" [routerLink]="['']" fragment="resources">
+          <mat-icon>local_library</mat-icon>
+          <span class="d-block mat-caption">Resources</span>
+        </button>
+      </div>
+      <div class="col no-padding-margin">
+        <button mat-button matTooltip="Partners" [routerLink]="['']" fragment="partners">
+          <mat-icon>hub</mat-icon>
+          <span class="d-block mat-caption">Partners</span>
+        </button>
+      </div>
+    </div>
+
+    <button mat-icon-button class="ml-3 fingerprint-icon" aria-label="icon-button with fingerprint icon"
+      matTooltip="Sign In" routerLink="sign-in">
       <mat-icon>fingerprint</mat-icon>
     </button>
 
-    <button mat-icon-button class="ml-3 example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()" matTooltip="menu">
+    <!-- <button mat-icon-button class="ml-3" aria-label="icon-button with menu icon" (click)="drawer.toggle()"
+      matTooltip="menu">
       <mat-icon>menu</mat-icon>
-    </button>
+    </button> -->
 
   </mat-toolbar-row>
 
 </mat-toolbar>
 
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
-    
-    <mat-action-list>
-      <button mat-list-item (click)="drawer.close()">
-        <mat-icon matListItemIcon>home</mat-icon>
-        <div matListItemTitle>Home</div>
-     </button>
-      <button mat-list-item (click)="drawer.close()">
-        <mat-icon matListItemIcon>event</mat-icon>
-        <div matListItemTitle>Events Calendar</div>
-     </button>
-      <button mat-list-item (click)="drawer.close()">
-        <mat-icon matListItemIcon>sentiment_very_satisfied</mat-icon>
-        <div matListItemTitle>Success Stories</div>
-     </button>
-      <button mat-list-item (click)="drawer.close()">
-        <mat-icon matListItemIcon>how_to_vote</mat-icon>
-        <div matListItemTitle>Support Us</div>
-     </button>
+<!-- <mat-drawer-container class="" autosize>
+  <mat-drawer #drawer class="side-nav" mode="side" position="end">
+    <div class="example-sidenav-content">
+      <mat-action-list>
+        <button mat-list-item (click)="drawer.close()">
+          <mat-icon matListItemIcon>home</mat-icon>
+          <div matListItemTitle>Home</div>
+        </button>
+        <button mat-list-item (click)="drawer.close()">
+          <mat-icon matListItemIcon>event</mat-icon>
+          <div matListItemTitle>Events Calendar</div>
+        </button>
+        <button mat-list-item (click)="drawer.close()">
+          <mat-icon matListItemIcon>sentiment_very_satisfied</mat-icon>
+          <div matListItemTitle>Success Stories</div>
+        </button>
+        <button mat-list-item (click)="drawer.close()">
+          <mat-icon matListItemIcon>how_to_vote</mat-icon>
+          <div matListItemTitle>Support Us</div>
+        </button>
 
-      <button mat-list-item (click)="drawer.close()">
-        <mat-icon matListItemIcon>contacts</mat-icon>
-        <div matListItemTitle>Contact</div>
-     </button>
+        <button mat-list-item (click)="drawer.close()">
+          <mat-icon matListItemIcon>location_pin</mat-icon>
+          <div matListItemTitle>Contact</div>
+        </button>
 
-      <button mat-list-item (click)="drawer.close()">
-        <mat-icon matListItemIcon>local_library</mat-icon>
-        <div matListItemTitle>Resources</div>
-     </button>
+        <button mat-list-item (click)="drawer.close()">
+          <mat-icon matListItemIcon>local_library</mat-icon>
+          <div matListItemTitle>Resources</div>
+        </button>
 
-      <button mat-list-item (click)="drawer.close()">
-        <mat-icon matListItemIcon>person_add</mat-icon>
-        <div matListItemTitle>Partners</div>
-     </button>
+        <button mat-list-item (click)="drawer.close()">
+          <mat-icon matListItemIcon>hub</mat-icon>
+          <div matListItemTitle>Partners</div>
+        </button>
 
-    </mat-action-list>
-
-    <!-- <mat-action-list>
-      <button mat-list-item>
-        <mat-icon matListItemIcon>person_add</mat-icon>
-        <div matListItemTitle>Partners and Sponsers</div>
-      </button>
-      <button mat-list-item >Undo</button>
-    </mat-action-list> -->
-
+      </mat-action-list>
+    </div>
   </mat-drawer>
 
-  <div class="example-sidenav-content">
+  <div>
     <router-outlet></router-outlet>
   </div>
-</mat-drawer-container>
+</mat-drawer-container> -->
 
+<div>
+  <router-outlet></router-outlet>
+</div>
