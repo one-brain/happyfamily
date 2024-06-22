@@ -1,6 +1,12 @@
-name: build-ui-application
+name: build-happy-family-application
 run-name: ${{ github.actor }} is running GitHub Actions
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+
 jobs:
   build-angular-ui-application:
     runs-on: ubuntu-latest
