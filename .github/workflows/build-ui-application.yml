@@ -4,24 +4,29 @@ on: [push]
 jobs:
   build-angular-ui-application:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend/HappyFamilyUI
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: 
-          node-version: '20'
-      - run: npm install
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Build
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'  # Adjust Node.js version as per your requirement
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./frontend/HappyFamilyUI
+
+      - name: Build Angular Application
         run: npm run build
-      
-      - name: Package artifacts
-        run: zip happy-family-ui.zip ./dist/happy-family-ui/* -r
-      
-      - name: Upload artifact for deployment job
+        working-directory: ./frontend/HappyFamilyUI
+
+      - name: Package Artifacts
+        run: zip -r happy-family-ui.zip ./dist/happy-family-ui/*
+        working-directory: ./frontend/HappyFamilyUI
+
+      - name: Upload Artifact for Deployment
         uses: actions/upload-artifact@v2
         with:
           name: happy-family-ui
-          path: ./happy-family-ui.zip
+          path: ./frontend/HappyFamilyUI/happy-family-ui.zip
