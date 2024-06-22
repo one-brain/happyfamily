@@ -34,11 +34,11 @@ jobs:
       - name: Package Artifacts
         run: |
           version=$(echo ${{ steps.version.outputs.version }})
-          zip -r happy-family-ui-$version.zip ./dist/happy-family-ui/*
+          zip -r happy-family-ui@v$version.zip ./dist/happy-family-ui/*
         working-directory: ./frontend/HappyFamilyUI
 
       - name: Upload Artifact for Deployment
         uses: actions/upload-artifact@v2
         with:
           name: happy-family-ui
-          path: ./frontend/HappyFamilyUI/happy-family-ui-*.zip
+          path: ./frontend/HappyFamilyUI/happy-family-ui@v*.zip
