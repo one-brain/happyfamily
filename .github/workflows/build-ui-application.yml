@@ -20,7 +20,11 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          if [ $? -ne 0 ]; then
+            exit 1
+          fi
         working-directory: ./frontend/HappyFamilyUI
 
       - name: Build Angular Application
@@ -29,15 +33,12 @@ jobs:
 
       - name: Get Application Version
         id: version
-        run: echo "version=$(node -p 'require(\"./frontend/HappyFamilyUI/package.json\").version')" >> $GITHUB_STATE
+        run: echo "version=$(node -p 'require(\"./frontend/HappyFamilyUI/package.json\").version')"
 
       - name: Package Artifacts
         run: |
-          source $GITHUB_STATE
-          zip -r happy-family-ui@${version}.zip ./dist/happy-family-ui/*
-         working-directory: ./frontend/HappyFamilyUI
-        env:
-          GITHUB_STATE: ${{ toJson(steps.version.outputs) }}
+          zip -r happy-family-ui@${{ steps.version.outputs.version }}.zip ./dist/happy-family-ui/*
+          working-directory: ./frontend/HappyFamilyUI
 
       - name: Upload Artifact for Deployment
         uses: actions/upload-artifact@v2
