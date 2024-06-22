@@ -39,10 +39,11 @@ jobs:
         - name: Package Artifacts
           run: |
             zip -r happy-family-ui.zip ./dist/happy-family-ui/*
-            working-directory: ./frontend/HappyFamilyUI
+          working-directory: ./frontend/HappyFamilyUI
 
         - name: Upload Artifact for Deployment
           uses: actions/upload-artifact@v2
           with:
             name: happy-family-ui
-            path: ./frontend/HappyFamilyUI/happy-family-ui.zip
+            path: ./happy-family-ui.zip
+            working-directory: ./frontend/HappyFamilyUI
