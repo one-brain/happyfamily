@@ -9,39 +9,40 @@ on:
 
 jobs:
   build-happy-family-application:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    - name: 'Build Happy Family Application Job'
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '20'
 
-      - name: Install Dependencies
-        run: |
-          npm install
-          if [ $? -ne 0 ]; then
-            exit 1
-          fi
-        working-directory: ./frontend/HappyFamilyUI
-
-      - name: Build Angular Application
-        run: npm run build
-        working-directory: ./frontend/HappyFamilyUI
-
-      # - name: Get Application Version
-      #   id: version
-      #   run: echo "version=$(node -p 'require(\"./frontend/HappyFamilyUI/package.json\").version')"
-
-      - name: Package Artifacts
-        run: |
-          zip -r happy-family-ui.zip ./dist/happy-family-ui/*
+        - name: Install Dependencies
+          run: |
+            npm install
+            if [ $? -ne 0 ]; then
+              exit 1
+            fi
           working-directory: ./frontend/HappyFamilyUI
 
-      - name: Upload Artifact for Deployment
-        uses: actions/upload-artifact@v2
-        with:
-          name: happy-family-ui
-          path: ./frontend/HappyFamilyUI/happy-family-ui.zip
+        - name: Build Angular Application
+          run: npm run build
+          working-directory: ./frontend/HappyFamilyUI
+
+        # - name: Get Application Version
+        #   id: version
+        #   run: echo "version=$(node -p 'require(\"./frontend/HappyFamilyUI/package.json\").version')"
+
+        - name: Package Artifacts
+          run: |
+            zip -r happy-family-ui.zip ./dist/happy-family-ui/*
+            working-directory: ./frontend/HappyFamilyUI
+
+        - name: Upload Artifact for Deployment
+          uses: actions/upload-artifact@v2
+          with:
+            name: happy-family-ui
+            path: ./frontend/HappyFamilyUI/happy-family-ui.zip
