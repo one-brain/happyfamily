@@ -8,7 +8,8 @@ on:
       - feature/*
 
 jobs:
-  build-angular-ui-application:
+  build-happy-family-app:
+    name: 'Build Happy Family UI Project Job'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
