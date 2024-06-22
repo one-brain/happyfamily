@@ -1,5 +1,5 @@
-name: build-happy-family-application
-run-name: ${{ github.actor }} is running GitHub Actions
+name: Build Happy Family App
+run-name: ${{ github.actor }} is running Build Happy Family App
 on: 
   push:
     branches:
@@ -34,7 +34,8 @@ jobs:
       - name: Package Artifacts
         run: |
           source $GITHUB_STATE
-          zip -r happy-family-ui@${version}.zip ./frontend/HappyFamilyUI/dist/happy-family-ui/*
+          zip -r happy-family-ui@${version}.zip ./dist/happy-family-ui/*
+         working-directory: ./frontend/HappyFamilyUI
         env:
           GITHUB_STATE: ${{ toJson(steps.version.outputs) }}
 
