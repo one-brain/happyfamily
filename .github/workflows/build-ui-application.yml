@@ -1,5 +1,5 @@
-name: Build Happy Family App
-run-name: ${{ github.actor }} is running Build Happy Family App
+name: 'Build Happy Family Application'
+run-name: ${{ github.actor }} is running GitHub Actions
 on: 
   push:
     branches:
