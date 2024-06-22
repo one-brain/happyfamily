@@ -12,55 +12,34 @@ jobs:
     name: 'Build Happy Family Application Job'
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
 
-    - name: Install Dependencies (using cache)
-      uses: actions/cache@v3
-      with:
-        path: ./frontend/HappyFamilyUI/node_modules
-        key: ${{ runner.os }}-node-${{ matrix.node-version }}-HappyFamilyUI-frontend
-        restore-keys: |
-          ${{ runner.os }}-node-
-          ${{ runner.os }}-
+      - name: Install Dependencies
+        run: |
+          npm install
+          if [ $? -ne 0 ]; then
+            exit 1
+          fi
+        working-directory: ./frontend/HappyFamilyUI
 
-    - name: Install Dependencies (if cache miss)
-      run: |
-        npm install
-        if [ $? -ne 0 ]; then
-          exit 1
-        fi
-      working-directory: ./frontend/HappyFamilyUI
+      - name: Build Angular Application
+        run: npm run build
+        working-directory: ./frontend/HappyFamilyUI
 
-    - name: Build Angular Application
-      run: npm run build
-      working-directory: ./frontend/HappyFamilyUI
+      - name: Package Artifacts
+        run: |
+          zip -r happy-family-ui.zip ./dist/happy-family-ui/*
+        working-directory: ./frontend/HappyFamilyUI
 
-    - name: Build Backend (if applicable)
-      # Add steps to build your backend here
-      # ...
-
-    - name: Check Build Status
-      run: |
-        if [ $? -ne 0 ]; then
-          exit 1  # Fail workflow if build fails
-        fi
-
-    - name: Package Frontend Artifacts
-      run: |
-        zip -r happy-family-ui.zip ./dist/happy-family-ui/*
-      working-directory: ./frontend/HappyFamilyUI
-
-    - name: Upload Frontend Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: happy-family-ui
-        path: ./happy-family-ui.zip
-      working-directory: ./frontend/HappyFamilyUI
-
-    # Similar steps can be added to upload backend artifacts (if applicable)
+      - name: Upload Artifact for Deployment
+        uses: actions/upload-artifact@v2
+        with:
+          name: happy-family-ui
+          path: ./happy-family-ui.zip
+        working-directory: ./frontend/HappyFamilyUI
