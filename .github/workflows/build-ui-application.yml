@@ -29,13 +29,14 @@ jobs:
 
       - name: Get Application Version
         id: version
-        run: echo ::set-output name=version::$(node -p "require('./frontend/HappyFamilyUI/package.json').version")
+        run: echo "version=$(node -p 'require(\"./frontend/HappyFamilyUI/package.json\").version')" >> $GITHUB_STATE
 
       - name: Package Artifacts
         run: |
-          version=$(echo ${{ steps.version.outputs.version }})
-          zip -r happy-family-ui@v$version.zip ./dist/happy-family-ui/*
-        working-directory: ./frontend/HappyFamilyUI
+          source $GITHUB_STATE
+          zip -r happy-family-ui@${version}.zip ./frontend/HappyFamilyUI/dist/happy-family-ui/*
+        env:
+          GITHUB_STATE: ${{ toJson(steps.version.outputs) }}
 
       - name: Upload Artifact for Deployment
         uses: actions/upload-artifact@v2
