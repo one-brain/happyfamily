@@ -1,5 +1,5 @@
 name: 'Build Happy Family Application'
-run-name: ${{ github.actor }} is running GitHub Actions
+run-name: Build Happy Family Application is run by ${{ github.actor }}
 on: 
   push:
     branches:
@@ -8,7 +8,7 @@ on:
       - feature/*
 
 jobs:
-  build-angular-ui-application:
+  build-happy-family-application:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -31,17 +31,17 @@ jobs:
         run: npm run build
         working-directory: ./frontend/HappyFamilyUI
 
-      - name: Get Application Version
-        id: version
-        run: echo "version=$(node -p 'require(\"./frontend/HappyFamilyUI/package.json\").version')"
+      # - name: Get Application Version
+      #   id: version
+      #   run: echo "version=$(node -p 'require(\"./frontend/HappyFamilyUI/package.json\").version')"
 
       - name: Package Artifacts
         run: |
-          zip -r happy-family-ui@${{ steps.version.outputs.version }}.zip ./dist/happy-family-ui/*
+          zip -r happy-family-ui.zip ./dist/happy-family-ui/*
           working-directory: ./frontend/HappyFamilyUI
 
       - name: Upload Artifact for Deployment
         uses: actions/upload-artifact@v2
         with:
           name: happy-family-ui
-          path: ./frontend/HappyFamilyUI/happy-family-ui@*.zip
+          path: ./frontend/HappyFamilyUI/happy-family-ui.zip
