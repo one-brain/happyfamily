@@ -216,7 +216,7 @@
 }
 
 .container #flip {
-    display: none;
+    display: block;
 }
 
 @media (max-width: 730px) {
@@ -238,6 +238,6 @@
     }
 
     .container #flip:checked~.forms .login-form {
-        display: none;
+        display: block;
     }
 }

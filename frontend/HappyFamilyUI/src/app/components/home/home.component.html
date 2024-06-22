@@ -1,6 +1,6 @@
 <section id="home" class="home-section">
-    <div class="text-center">
-        <div class="">
+    <div class="center text-center">
+        <div>
             <img class="bg-light tool-bar-icon" src="assets/favicon.png">
         </div>
         <div> <span class="mat-headline-5"> Welcome to </span> </div>
@@ -36,50 +36,97 @@
 </section>
 
 <mat-divider></mat-divider>
-<section id="events" class="events-section">
-    <div class="text-right text-danger">
-        <mat-icon class="icon-display">event</mat-icon>
-        <span class="ml-2 mat-headline-4"> Events </span>
+<section id="events">
+    <div class="events-section wrapper">
+        <div class="text-left text-danger" id="back-section">
+            <mat-icon class="icon-display">event</mat-icon>
+            <span class="ml-2 mat-headline-4"> Events </span>
+        </div>
+    </div>
+    <div class="center">
+        <!-- <app-event-list></app-event-list> -->
     </div>
 </section>
 
 <mat-divider></mat-divider>
-<section id="stories" class="stories-section">
-    <div class="text-white">
-        <mat-icon class="icon-display">sentiment_very_satisfied</mat-icon>
-        <span class="ml-2 mat-headline-4"> Stories </span>
+<section id="stories">
+    <div class="stories-section wrapper">
+        <div class="text-white">
+            <mat-icon class="icon-display">sentiment_very_satisfied</mat-icon>
+            <span class="ml-2 mat-headline-4"> Stories </span>
+        </div>
+    </div>
+    <div class="stories-section-top">
+        <h3> Top Layer</h3>
     </div>
 </section>
 
 <mat-divider></mat-divider>
-<section id="support" class="support-section">
-    <div class="text-white">
-        <mat-icon class="icon-display">how_to_vote</mat-icon>
-        <span class="ml-2 mat-headline-4"> Support </span>
+<section id="support">
+    <div class="support-section wrapper">
+        <div class="text-white">
+            <mat-icon class="icon-display">how_to_vote</mat-icon>
+            <span class="ml-2 mat-headline-4"> Support </span>
+        </div>
+    </div>
+    <div class="support-section-top">
+        <h3> Top Layer</h3>
     </div>
 </section>
 
 <mat-divider></mat-divider>
-<section id="contact" class="contact-section">
-    <div class="text-white">
-        <mat-icon class="icon-display">location_pin</mat-icon>
-        <span class="ml-2 mat-headline-4"> Contact </span>
+<section id="contact">
+    <div class="contact-section wrapper">
+        <div class="text-white">
+            <mat-icon class="icon-display">location_pin</mat-icon>
+            <span class="ml-2 mat-headline-4"> Contact </span>
+        </div>
+    </div>
+    <div class="contact-section-top">
+        <h3> Top Layer</h3>
     </div>
 </section>
 
 <mat-divider></mat-divider>
-<section id="resources" class="resources-section">
-    <div class="text-white">
-        <mat-icon class="icon-display">local_library</mat-icon>
-        <span class="ml-2 mat-headline-4"> Resources </span>
+<section id="resources">
+    <div class="resources-section wrapper">
+        <div class="text-white">
+            <mat-icon class="icon-display">local_library</mat-icon>
+            <span class="ml-2 mat-headline-4"> Resources </span>
+        </div>
+    </div>
+    <div class="resources-section-top">
+        <h3> Top Layer</h3>
     </div>
 </section>
 
 <mat-divider></mat-divider>
-<section id="partners" class="partners-section">
-    <div class="text-white">
-        <mat-icon class="icon-display">hub</mat-icon>
-        <span class="ml-2 mat-headline-4"> Partners </span>
+<section id="partners">
+    <div class="partners-section wrapper text-center  text-white">
+        <!-- <div class="text-white d-inline-block">
+            <mat-icon class="icon-display mr-2">hub</mat-icon>
+            <span class="ml-2 mat-headline-4"> Partners </span>
+        </div> -->
+
+
+        <div>
+            <mat-icon class="icon-display mr-2">hub</mat-icon>
+            <span class="ml-2 mat-headline-4"> Partners </span>
+        </div>
+        <mat-divider class="mt-4"></mat-divider>
+        <div>
+            <span class="mat-headline-1"> our trusted partners </span>
+        </div>
+        <p class="mt-3">
+            A dream to provide everything to everyone with love. We are the platform to serve the required thing to
+            those who are not able or not blessed as us by the God.
+        </p>
+        <p>
+            Bet the part of our journey and be the reason for someone's smile!!
+        </p>
+
+        <app-partner-list></app-partner-list>
+        
     </div>
 </section>
 

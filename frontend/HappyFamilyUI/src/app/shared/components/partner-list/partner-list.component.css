@@ -1,0 +1,7 @@
+.parter-list-wrapper {
+    margin: 24px;
+    overflow: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+    max-width: 100%;
+}
