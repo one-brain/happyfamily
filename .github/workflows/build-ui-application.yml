@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-happy-family-app:
-    name: 'Build Happy Family UI Project Job'
+    name: 'Build and Upload Artifacts'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -37,3 +37,28 @@ jobs:
         with:
           name: happy-family-ui
           path: ./frontend/HappyFamilyUI/happy-family-ui.zip
+  
+  
+  deploy-happy-family-app:
+    name: 'Deploy on Github Pages'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: happy-family-ui
+          path: ./artifact
+
+      - name: Extract Artifact
+        run: |
+          unzip -q ./artifact/happy-family-ui*.zip -d ./deploy
+
+      # - name: Deploy to GitHub Pages
+      #   uses: JamesIves/github-pages-deploy-action@4.2.0
+      #   with:
+      #     branch: gh-pages  # Branch to deploy to (e.g., gh-pages)
+      #     folder: ./deploy  # Folder containing the static site files
