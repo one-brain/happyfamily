@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { AuthenticationComponent } from './components/authentication/authenticat
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    FormsModule,
     SharedModule,
 
     MatToolbarModule,

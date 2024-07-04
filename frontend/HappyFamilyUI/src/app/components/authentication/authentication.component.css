@@ -15,7 +15,11 @@
     perspective: 2700px;
 }
 
-.container .cover {
+#flip {
+    display: none;
+}
+
+.cover {
     position: absolute;
     top: 0;
     left: 50%;
@@ -27,42 +31,25 @@
     transform-style: preserve-3d;
 }
 
-.container #flip:checked~.cover {
+#flip:checked ~ .cover {
     transform: rotateY(-180deg);
 }
 
-.container .cover .front,
-.container .cover .back {
+.cover .front,
+.cover .back {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    backface-visibility: hidden;
 }
 
 .cover .back {
     transform: rotateY(180deg);
-    backface-visibility: hidden;
 }
 
-.container .cover::before,
-.container .cover::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: #7d2ae8;
-    opacity: 0.5;
-    z-index: 12;
-}
-
-.container .cover::after {
-    opacity: 0.3;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-}
-
-.container .cover img {
+.cover img {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -70,9 +57,9 @@
     z-index: 10;
 }
 
-.container .cover .text {
+.cover .text {
     position: absolute;
-    z-index: 130;
+    z-index: 20;
     height: 100%;
     width: 100%;
     display: flex;
@@ -94,31 +81,31 @@
     font-weight: 500;
 }
 
-.container .forms {
+.forms {
     height: 100%;
     width: 100%;
     background: #fff;
 }
 
-.container .form-content {
+.form-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.form-content .login-form,
-.form-content .signup-form {
+.login-form,
+.signup-form {
     width: calc(100% / 2 - 25px);
 }
 
-.forms .form-content .title {
+.title {
     position: relative;
     font-size: 24px;
     font-weight: 500;
     color: #333;
 }
 
-.forms .form-content .title:before {
+.title:before {
     content: '';
     position: absolute;
     left: 0;
@@ -128,15 +115,15 @@
     background: #7d2ae8;
 }
 
-.forms .signup-form .title:before {
+.signup-form .title:before {
     width: 20px;
 }
 
-.forms .form-content .input-boxes {
+.input-boxes {
     margin-top: 30px;
 }
 
-.forms .form-content .input-box {
+.input-box {
     display: flex;
     align-items: center;
     height: 50px;
@@ -145,7 +132,7 @@
     position: relative;
 }
 
-.form-content .input-box input {
+.input-box input {
     height: 100%;
     width: 100%;
     outline: none;
@@ -157,37 +144,37 @@
     transition: all 0.3s ease;
 }
 
-.form-content .input-box input:focus,
-.form-content .input-box input:valid {
+.input-box input:focus,
+.input-box input:valid {
     border-color: #7d2ae8;
 }
 
-.form-content .input-box mat-icon {
+.input-box mat-icon {
     position: absolute;
     color: #7d2ae8;
     font-size: 17px;
 }
 
-.forms .form-content .text {
+.text {
     font-size: 14px;
     font-weight: 500;
     color: #333;
 }
 
-.forms .form-content .text a {
+.text a {
     text-decoration: none;
 }
 
-.forms .form-content .text a:hover {
+.text a:hover {
     text-decoration: underline;
 }
 
-.forms .form-content .button {
+.button {
     color: #fff;
     margin-top: 40px;
 }
 
-.forms .form-content .button input {
+.button input {
     color: #fff;
     background: #7d2ae8;
     border-radius: 6px;
@@ -196,48 +183,44 @@
     transition: all 0.4s ease;
 }
 
-.forms .form-content .button input:hover {
+.button input:hover {
     background: #5b13b9;
 }
 
-.forms .form-content label {
+label {
     color: #5b13b9;
     cursor: pointer;
 }
 
-.forms .form-content label:hover {
+label:hover {
     text-decoration: underline;
 }
 
-.forms .form-content .login-text,
-.forms .form-content .sign-up-text {
+.login-text,
+.sign-up-text {
     text-align: center;
     margin-top: 25px;
 }
 
-.container #flip {
-    display: block;
-}
-
 @media (max-width: 730px) {
-    .container .cover {
+    .cover {
         display: none;
     }
 
-    .form-content .login-form,
-    .form-content .signup-form {
+    .login-form,
+    .signup-form {
         width: 100%;
     }
 
-    .form-content .signup-form {
+    .signup-form {
         display: none;
     }
 
-    .container #flip:checked~.forms .signup-form {
+    #flip:checked ~ .forms .signup-form {
         display: block;
     }
 
-    .container #flip:checked~.forms .login-form {
+    #flip:checked ~ .forms .login-form {
         display: block;
     }
 }
