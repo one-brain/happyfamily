@@ -6,7 +6,7 @@ section {
     display: block;
     box-sizing: border-box;
     overflow: auto;
-    padding: 32px;
+    padding: 8px;
 }
 
 /* Centering Content */
@@ -19,7 +19,7 @@ section {
 
 /* Wrapper Padding */
 .wrapper {
-    padding: 32px;
+    padding: 4px;
 }
 
 /* Home Section Specific Styling */
@@ -39,10 +39,10 @@ section {
 }
 
 /* Icon Display Styling */
-.icon-display {
-    transform: scale(2);
-    margin-right: 10px;
-}
+/* .icon-display {
+    transform: scale(1);
+    margin-right: 0px;
+} */
 
 /* Flexbox for Horizontal Alignment */
 .wrapper .flex-container {
