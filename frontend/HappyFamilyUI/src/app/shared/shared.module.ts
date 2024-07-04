@@ -7,6 +7,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { PartnerCardComponent } from './components/partner-card/partner-card.component';
 import { PartnerListComponent } from './components/partner-list/partner-list.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
@@ -16,19 +19,23 @@ import { PartnerListComponent } from './components/partner-list/partner-list.com
     EventCardComponent,
     EventListComponent,
     PartnerCardComponent,
-    PartnerListComponent
+    PartnerListComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ],
   exports: [
     LogoComponent,
     EventCardComponent,
     EventListComponent,
     PartnerCardComponent,
-    PartnerListComponent
+    PartnerListComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

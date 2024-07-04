@@ -1,3 +1,4 @@
+/* General Section Styling */
 section {
     background-size: cover;
     height: 100vh;
@@ -5,70 +6,67 @@ section {
     display: block;
     box-sizing: border-box;
     overflow: auto;
+    padding: 32px;
 }
 
+/* Centering Content */
 .center {
     margin: auto;
     width: 50vw;
     padding: 10px;
+    text-align: center;
 }
 
+/* Wrapper Padding */
 .wrapper {
     padding: 32px;
 }
 
+/* Home Section Specific Styling */
 #home {
     padding-top: 10rem;
     background-image: url('../../../assets/home-section-background.jpg');
 }
 
 .home-section {
-    /* padding: 3rem 2rem; */
-    /* background-image: url('../../../assets/home-section-background.jpg'); */
+    padding: 3rem 2rem;
 }
 
-
-#events {
+/* Common Background for Sections */
+#events, #support, #contact, #partners, #stories, #resources {
     background-image: url('../../../assets/purple-background.jpg');
     scroll-margin-top: 6rem;
 }
 
-#support {
-    background-image: url('../../../assets/purple-background.jpg');
-    scroll-margin-top: 6rem;
-}
-
-#contact {
-    background-image: url('../../../assets/purple-background.jpg');
-    scroll-margin-top: 6rem;
-}
-
-#partners {
-    background-image: url('../../../assets/purple-background.jpg');
-    scroll-margin-top: 6rem;
-}
-
-#stories {
-    background-image: url('../../../assets/purple-background.jpg');
-    scroll-margin-top: 6rem;
-}
-
-#resources {
-    background-image: url('../../../assets/purple-background.jpg');
-    scroll-margin-top: 6rem;
-}
-
+/* Icon Display Styling */
 .icon-display {
     transform: scale(2);
+    margin-right: 10px;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    background-color: rgb(221, 148, 13);
-    color: rgb(9, 2, 24);
-    text-align: center;
-    margin: 0px;
+/* Flexbox for Horizontal Alignment */
+.wrapper .flex-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .center {
+        width: 80vw;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .center {
+        width: 90vw;
+    }
+
+    .icon-display {
+        transform: scale(1.5);
+    }
 }
