@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./partner-list.component.css']
 })
 export class PartnerListComponent {
-  partnerList = ['obi', 'obi2', 'obi3', 'obi4', 'obi5', 'obi6','obi7', 'obi8', 'obi9', 'obi10'];
+  partnerList = ['obi', 'obi2', 'obi3', 'obi4', 'obi5'];
 }

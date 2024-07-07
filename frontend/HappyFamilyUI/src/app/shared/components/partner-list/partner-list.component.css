@@ -1,7 +1,16 @@
-.parter-list-wrapper {
+/* .parter-list-wrapper {
     margin: 24px;
     overflow: auto;
     white-space: nowrap;
     overflow-y: hidden;
     max-width: 100%;
-}
+} */
+
+.partner-list-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Key style for wrapping partners */
+  }
+  
+  .partner-list-wrapper app-partner-card {
+    margin: 10px; /* Adjust margin as needed */
+  }
